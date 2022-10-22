@@ -1,0 +1,160 @@
+*,
+body,
+.container {
+  background-color: #1F2029;
+  color: white;
+}
+
+.title {
+  margin: 50px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.title h2 {
+  text-transform: uppercase;
+}
+.title .addTask {
+  color: white;
+}
+
+table {
+  color: white;
+  width: 100%;
+}
+table thead tr {
+  border: none;
+  line-height: 40px;
+}
+table thead tr th {
+  font-size: 11px;
+  color: rgba(245, 245, 245, 0.6);
+  text-transform: uppercase;
+}
+table tr {
+  border-bottom: solid 0.5px rgba(112, 128, 144, 0.5);
+  line-height: 80px;
+}
+table tr .titleTask,
+table tr .statusTask {
+  text-transform: capitalize;
+}
+table tr .deleteTask:hover {
+  color: rgba(255, 0, 0, 0.6);
+  font-size: 23px;
+  transition: all ease-in 0.2s;
+  cursor: pointer;
+}
+
+td:nth-last-child(1),
+th:nth-last-child(1) {
+  text-align: center;
+  width: 40px;
+}
+
+.modal.fade .modal-dialog {
+  background-color: transparent;
+}
+.modal.fade .modal-dialog .modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: var(--bs-modal-color);
+  pointer-events: auto;
+  background-color: #1F2029;
+  background-clip: none;
+  border: none;
+  border-radius: 0;
+  outline: 0;
+}
+.modal.fade .modal-dialog .modal-content .modal-header {
+  border: none;
+}
+.modal.fade .modal-dialog .modal-content .modal-header button {
+  border: none;
+  font-size: 25px;
+}
+.modal.fade .modal-dialog .modal-content .modal.show .modal-dialog {
+  transform: none;
+  background-color: transparent;
+}
+.modal.fade .modal-dialog .modal-content .modal-footer {
+  display: flex;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: left;
+  padding: calc(var(--bs-modal-padding) - var(--bs-modal-footer-gap) * 0.5);
+  background-color: #1F2029;
+  border: none;
+}
+
+#exampleModalCenter {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5411764706);
+}
+#exampleModalCenter form legend {
+  text-align: center;
+  padding-bottom: 65px;
+}
+#exampleModalCenter form #emptyTitle,
+#exampleModalCenter form #emptydeadline {
+  display: none;
+  text-align: center;
+}
+#exampleModalCenter form #emptyTitle p,
+#exampleModalCenter form #emptydeadline p {
+  color: orangered;
+}
+#exampleModalCenter form .formTask {
+  display: flex;
+  margin-top: 2rem;
+  margin-bottom: 0 !important;
+}
+#exampleModalCenter form .formTask:first-child {
+  margin-top: 0;
+}
+#exampleModalCenter form .formTask .form-label {
+  margin: 0.5rem;
+}
+#exampleModalCenter form .formTask select {
+  display: block;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.375rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+#exampleModalCenter form .formTask .form-input {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff !important;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.375rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.modal-backdrop.show {
+  display: none;
+}/*# sourceMappingURL=style.css.map */
