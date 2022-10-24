@@ -5,9 +5,8 @@ document.querySelector('.addTask').addEventListener('click', (e) => {
 
 i = 0;
 var tbodySelector = document.querySelector("tbody");
-var tbodyChildren = tbodySelector.children;
-
 //boucle pour trouver si l'element exsiste déjà && si la deadline est la mm
+
 
 function addRow(title, deadline, status) {
   tbodySelector.innerHTML += '<tr id="'+ title +'"><td class="titleTask"><p>' + title + '</p></td><td class="deadlineTask" id="deadlineTask' + i + '"><p>' + deadline + '</p></td><td class="statusTask"><p>' + status + '</p></td><td class="deleteTask">x</td></tr>';
@@ -23,13 +22,17 @@ document.getElementById('submitTask').addEventListener('click', (e) => {
   const textstatusTask = statusTask.options[statusTask.selectedIndex].text;
   var body = document.querySelector('body');
   var modalCenter = document.getElementById('exampleModalCenter');
-  var xDeleteTask = document.querySelectorAll('.deleteTask');
   var emptyTitle = document.getElementById("emptyTitle");
   var emptyDeadline = document.getElementById("emptydeadline");
+  var verifySameTask = false
 
-  console.log(deadlineTask);
+  for (const child of tbodySelector.children) {
+    if (document.getElementById(titleTask) && child.children[1].textContent.trim() == (deadlineTask.trim())) {
+      verifySameTask = true
+    }
+  }
 
-  if (document.getElementById(titleTask) && (document.querySelector("#" + titleTask + " .deadlineTask").textContent) == (deadlineTask)) {
+  if (verifySameTask == true) {
     alert("This task exist alredy please try again")
     
   } else if (titleTask == '' && !deadlineTask == '') {
@@ -52,8 +55,11 @@ document.getElementById('submitTask').addEventListener('click', (e) => {
     document.getElementById('submitTask').setAttribute('data-dismiss', 'modal');
     addRow(titleTask, deadlineTask, textstatusTask);
 
-    xDeleteTask.forEach(e => {
-      e.addEventListener('click', (e) => {
+    var xDeleteTask = document.querySelectorAll('.deleteTask');
+    xDeleteTask.forEach(ele => {
+      console.log('delete', ele);
+      ele.addEventListener('click', (e) => {
+        console.log("click", e);
         var tdRow = document.getElementById(titleTask);
         var td = e.target.parentElement;
         var tr = td.parentNode;
@@ -61,6 +67,7 @@ document.getElementById('submitTask').addEventListener('click', (e) => {
         console.log(tr);
         tr.removeChild(td);
       });
+      console.log('after delete', ele);
     });
     emptyTitle.style.cssText = "display: none;";
     emptyDeadline.style.cssText = "display: none;";
