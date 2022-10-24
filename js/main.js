@@ -27,8 +27,8 @@ document.getElementById('submitTask').addEventListener('click', (e) => {
   var verifySameTask = false
 
   for (const child of tbodySelector.children) {
-    if (document.getElementById(titleTask) && child.children[1].textContent.trim() == (deadlineTask.trim())) {
-      verifySameTask = true
+    if (child.id == titleTask && child.children[1].textContent.trim() == (deadlineTask.trim())) {
+      verifySameTask = true;
     }
   }
 
