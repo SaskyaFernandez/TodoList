@@ -41,7 +41,6 @@ table {
     tr {
         border-bottom: solid .5px rgba(112, 128, 144, 0.5);
         line-height: 80px;
-
         .titleTask,
         .statusTask {
             text-transform: capitalize;
@@ -68,8 +67,10 @@ th:nth-last-child(1) {
     // padding-right:30px;
     width: 40px;
 }
+
 .modal.fade .modal-dialog {
     background-color: transparent;
+
     .modal-content {
         position: relative;
         display: flex;
@@ -80,20 +81,24 @@ th:nth-last-child(1) {
         background-color: #1F2029;
         background-clip: none;
         border: none;
-        border-radius:0;
+        border-radius: 0;
         outline: 0;
-        .modal-header{
+
+        .modal-header {
             border: none;
-            button{
+
+            button {
                 border: none;
                 font-size: 25px;
             }
         }
+
         .modal.show .modal-dialog {
             transform: none;
             background-color: transparent;
-          }
-          .modal-footer {
+        }
+
+        .modal-footer {
             display: flex;
             flex-shrink: 0;
             flex-wrap: wrap;
@@ -102,12 +107,13 @@ th:nth-last-child(1) {
             padding: calc(var(--bs-modal-padding) - var(--bs-modal-footer-gap) * .5);
             background-color: #1F2029;
             border: none;
-          }
-      }
-  }
+        }
+    }
+}
 
 
-#exampleModalCenter {
+#exampleModalCenter,
+#editModal {
     display: none;
     justify-content: center;
     align-items: center;
@@ -119,6 +125,7 @@ th:nth-last-child(1) {
     background-color: #0000008a;
 
     form {
+
         // width: 60%;
         legend {
             text-align: center;
@@ -139,9 +146,11 @@ th:nth-last-child(1) {
             display: flex;
             margin-top: 2rem;
             margin-bottom: 0 !important;
-            &:first-child{
+
+            &:first-child {
                 margin-top: 0;
             }
+
             .form-label {
                 margin: .5rem;
             }
@@ -158,6 +167,15 @@ th:nth-last-child(1) {
                 border: 1px solid #ced4da;
                 border-radius: 0.375rem;
                 transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+                :first-child{
+                    color : orangered
+                }
+                :nth-child(2){
+                    color : orange
+                }
+                :last-child{
+                    color : green
+                }
             }
 
             .form-input {
@@ -168,7 +186,7 @@ th:nth-last-child(1) {
                 font-weight: 400;
                 line-height: 1.5;
                 color: #212529;
-                background-color: #fff!important;
+                background-color: #fff !important;
                 background-clip: padding-box;
                 border: 1px solid #ced4da;
                 -webkit-appearance: none;
@@ -181,6 +199,7 @@ th:nth-last-child(1) {
     }
 
 }
-    .modal-backdrop.show {
-        display: none;
-      }
+
+.modal-backdrop.show {
+    display: none;
+}

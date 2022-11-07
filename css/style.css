@@ -89,7 +89,8 @@ th:nth-last-child(1) {
   border: none;
 }
 
-#exampleModalCenter {
+#exampleModalCenter,
+#editModal {
   display: none;
   justify-content: center;
   align-items: center;
@@ -100,31 +101,40 @@ th:nth-last-child(1) {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5411764706);
 }
-#exampleModalCenter form legend {
+#exampleModalCenter form legend,
+#editModal form legend {
   text-align: center;
   padding-bottom: 65px;
 }
 #exampleModalCenter form #emptyTitle,
-#exampleModalCenter form #emptydeadline {
+#exampleModalCenter form #emptydeadline,
+#editModal form #emptyTitle,
+#editModal form #emptydeadline {
   display: none;
   text-align: center;
 }
 #exampleModalCenter form #emptyTitle p,
-#exampleModalCenter form #emptydeadline p {
+#exampleModalCenter form #emptydeadline p,
+#editModal form #emptyTitle p,
+#editModal form #emptydeadline p {
   color: orangered;
 }
-#exampleModalCenter form .formTask {
+#exampleModalCenter form .formTask,
+#editModal form .formTask {
   display: flex;
   margin-top: 2rem;
   margin-bottom: 0 !important;
 }
-#exampleModalCenter form .formTask:first-child {
+#exampleModalCenter form .formTask:first-child,
+#editModal form .formTask:first-child {
   margin-top: 0;
 }
-#exampleModalCenter form .formTask .form-label {
+#exampleModalCenter form .formTask .form-label,
+#editModal form .formTask .form-label {
   margin: 0.5rem;
 }
-#exampleModalCenter form .formTask select {
+#exampleModalCenter form .formTask select,
+#editModal form .formTask select {
   display: block;
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
@@ -137,7 +147,20 @@ th:nth-last-child(1) {
   border-radius: 0.375rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-#exampleModalCenter form .formTask .form-input {
+#exampleModalCenter form .formTask select :first-child,
+#editModal form .formTask select :first-child {
+  color: orangered;
+}
+#exampleModalCenter form .formTask select :nth-child(2),
+#editModal form .formTask select :nth-child(2) {
+  color: orange;
+}
+#exampleModalCenter form .formTask select :last-child,
+#editModal form .formTask select :last-child {
+  color: green;
+}
+#exampleModalCenter form .formTask .form-input,
+#editModal form .formTask .form-input {
   display: block;
   width: 100%;
   padding: 0.375rem 0.75rem;
